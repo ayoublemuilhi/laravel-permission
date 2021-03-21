@@ -39,7 +39,7 @@ class Permission extends Model implements PermissionContract
         $permission = static::getPermissions(['name_fr' => $attributes['name_fr'],'name_ar' => $attributes['name_ar'], 'guard_name' => $attributes['guard_name']])->first();
 
         if ($permission) {
-            throw PermissionAlreadyExists::create($attributes['name_fr'],$attributes['name_ar'], $attributes['guard_name']);
+            throw PermissionAlreadyExists::create($attributes['name_fr'], $attributes['name_ar'], $attributes['guard_name']);
         }
 
         return static::query()->create($attributes);
